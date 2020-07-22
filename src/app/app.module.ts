@@ -3,14 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SearcherComponent } from './components/searcher/searcher.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ImageCollectionComponent } from './components/image-collection/image-collection.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearcherComponent,
+    ImageCollectionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

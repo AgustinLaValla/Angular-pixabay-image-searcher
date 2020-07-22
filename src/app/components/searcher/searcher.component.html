@@ -1,0 +1,22 @@
+<form #f="ngForm" (ngSubmit)="submitHandler(f.value.search)">
+    <div class="row">
+        <div class="col-md-8 offset-1">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-dark">
+                        <i class="material-icons text-light">search</i>
+                    </div>
+                </div>
+                <input type="text" 
+                       class="form-control" 
+                       placeholder='Search your image. Exaple: "Footbal" '
+                       name="search"
+                       ngModel
+                >
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-danger btn-block">Search</button>
+        </div>
+    </div>
+</form>

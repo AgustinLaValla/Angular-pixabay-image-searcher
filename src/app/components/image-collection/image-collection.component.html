@@ -1,0 +1,26 @@
+<div class="row mt-5">
+    <div class="col-md-10 mx-auto">
+        <div *ngIf="images.length > 0" class="card-columns">
+            <div *ngFor="let image of images" class="card">
+                <img [src]="image.webformatURL" [alt]="image.tags" class="img-fluid card-image-top"
+                    style="height: 200px;">
+                <div class="card-body">
+                    <p>Likes: {{image.likes}}</p>
+                    <p>Views: {{image.views}}</p>
+                </div>
+                <a [href]='image.webformatURL' class="btn btn-primary btn-block">See Image</a>
+            </div>
+        </div>
+
+        <div *ngIf="images.length > 0" class="d-flex justify-content-center">
+            <button (click)="incrementOrDecrementPage(-1)" class="btn btn-primary mr-1">Prev &larr;</button>
+            <button (click)="incrementOrDecrementPage(1)" class="btn btn-primary mr-1">Next &rarr;</button>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="images.length === 0 && touched" class="alert alert-warning">
+    <span style="font-size: 20px; font-weight: bold; text-align:center;">Your request has no results</span>
+</div>
+
